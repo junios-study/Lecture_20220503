@@ -1,39 +1,21 @@
 #include <iostream>
 
-
-//2 X 1 = 2
-//2 X 2 = 4
-//2 X 3 = 6
-//...
-//2 X 9 = 18
 using namespace std;
 
 int main()
 {
-	//int Number = 0;
-	//{
-	//	int Number = 1;
-	//	{
-	//		Number = 2;
-	//		//cout << Number << endl;
-	//	}
+	//형 변환
+	int A = 0;
+	float B = 1.0f;
+	B = (float)A; // 프로그래머의 의지를 표명
+	A = (int)B;
+	srand(static_cast<unsigned int>(time(0)));
 
-	//	cout << Number << endl;
-	//}
-
-	////cout << Number << endl;
-
-	int X = 2;
-	int Number = 0;
-
-	cin >> X;
-
-	for (int Number = 1; Number <= 9; ++Number)
+	for (int i = 0; i < 10; ++i)
 	{
-		cout << X << " X " << Number << " = " << (Number * X) << endl;
+		cout << rand() << endl;
 	}
-
-	cout << Number << endl;
+	
 
 
 	return 0;
