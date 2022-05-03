@@ -1,17 +1,14 @@
 #include <iostream>
+#include "Common.h"
+#include "Initialize.h"
+
 
 using namespace std;
 
-#define MAX 52
 
-//Heart A           0 - 12    0
-//Spade A           13 - 25   1
-//Clubs A          26 - 38   2
-//Diamond A         39 - 51   3
-int A[MAX] = { 0, };
-int SplitCard[52] = { 0, };
 
-void Initialize();
+
+
 
 
 //declaration
@@ -36,15 +33,7 @@ int main()
 	return 0;
 }
 
-void Initialize()
-{
-	srand((unsigned int)time(0));
 
-	for (int i = 0; i < MAX; ++i)
-	{
-		A[i] = i;
-	}
-}
 
 //implementation
 void Shuffle()
@@ -117,3 +106,4 @@ void Draw()
 	}
 
 }
+
