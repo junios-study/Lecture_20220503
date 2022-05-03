@@ -2,21 +2,39 @@
 
 using namespace std;
 
+#define MAX 52
+
+
 int main()
 {
-	//형 변환
-	int A = 0;
-	float B = 1.0f;
-	B = (float)A; // 프로그래머의 의지를 표명
-	A = (int)B;
-	srand(static_cast<unsigned int>(time(0)));
+    int A[MAX] = { 0, };
 
-	for (int i = 0; i < 10; ++i)
-	{
-		cout << rand() << endl;
-	}
-	
+    srand((unsigned int)time(0));
+
+    for (int i = 0; i < MAX; ++i)
+    {
+        A[i] = i + 1;
+    }
+
+    //shuffle
+    for (int i = 0; i < MAX * 2; ++i)
+    {
+        int FirstNumber = rand() % MAX;
+        int SecondNumber = rand() % MAX;
+
+        //Swap
+        int Temp = A[FirstNumber];
+        A[FirstNumber] = A[SecondNumber];
+        A[SecondNumber] = Temp;
+    }
+
+    for (int i = 0; i < MAX; ++i)
+    {
+        cout << A[i] << ", ";
+    }
+
 
 
 	return 0;
 } 
+
